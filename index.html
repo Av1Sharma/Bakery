@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Success Bakery - Idle Game</title>
+    <meta name="description" content="Run your own cozy bakery! Bake delicious treats, serve customers, and build your bakery empire in this relaxing idle clicker game.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="bakery-name">🧁 Sweet Success Bakery</h1>
+            <div class="stats-bar">
+                <div class="stat">
+                    <span class="stat-label">💰 Money</span>
+                    <span class="stat-value" id="money-display">$0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">⭐ Reputation</span>
+                    <span class="stat-value" id="reputation-display">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">🍪 Total Baked</span>
+                    <span class="stat-value" id="total-baked-display">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Game Area -->
+    <main class="game-container">
+        <!-- Left Panel: Baking Area -->
+        <section class="panel baking-panel">
+            <h2 class="panel-title">🔥 Baking Station</h2>
+            
+            <div class="baking-area">
+                <div class="oven-display">
+                    <div class="oven-icon">🧁</div>
+                    <div class="oven-status">Ready to bake!</div>
+                </div>
+                
+                <button class="bake-button" id="bake-button">
+                    <span class="button-text">Bake Cookie</span>
+                    <span class="button-value">+$<span id="click-value">1</span></span>
+                </button>
+                
+                <div class="production-stats">
+                    <div class="production-stat">
+                        <span>Per Click:</span>
+                        <strong id="per-click">$1</strong>
+                    </div>
+                    <div class="production-stat">
+                        <span>Per Second:</span>
+                        <strong id="per-second">$0</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Current Recipe Display -->
+            <div class="current-recipe">
+                <h3>Current Recipe</h3>
+                <div class="recipe-card active-recipe">
+                    <div class="recipe-icon">🍪</div>
+                    <div class="recipe-info">
+                        <div class="recipe-name">Chocolate Chip Cookie</div>
+                        <div class="recipe-value">$1 per bake</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Center Panel: Customers -->
+        <section class="panel customers-panel">
+            <h2 class="panel-title">👥 Customer Queue</h2>
+            
+            <div class="customer-queue" id="customer-queue">
+                <div class="empty-state">
+                    <div class="empty-icon">🏪</div>
+                    <p>Waiting for customers...</p>
+                </div>
+            </div>
+
+            <div class="customer-stats">
+                <div class="customer-stat">
+                    <span>Served Today:</span>
+                    <strong id="customers-served">0</strong>
+                </div>
+                <div class="customer-stat">
+                    <span>Tips Earned:</span>
+                    <strong id="tips-earned">$0</strong>
+                </div>
+            </div>
+        </section>
+
+        <!-- Right Panel: Upgrades & Recipes -->
+        <section class="panel upgrades-panel">
+            <div class="tabs">
+                <button class="tab active" data-tab="recipes">📋 Recipes</button>
+                <button class="tab" data-tab="upgrades">⬆️ Upgrades</button>
+                <button class="tab" data-tab="staff">👨‍🍳 Staff</button>
+            </div>
+
+            <!-- Recipes Tab -->
+            <div class="tab-content active" id="recipes-tab">
+                <div class="upgrades-list" id="recipes-list">
+                    <!-- Recipes will be dynamically added here -->
+                </div>
+            </div>
+
+            <!-- Upgrades Tab -->
+            <div class="tab-content" id="upgrades-tab">
+                <div class="upgrades-list" id="upgrades-list">
+                    <!-- Upgrades will be dynamically added here -->
+                </div>
+            </div>
+
+            <!-- Staff Tab -->
+            <div class="tab-content" id="staff-tab">
+                <div class="upgrades-list" id="staff-list">
+                    <!-- Staff will be dynamically added here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <button class="footer-button" id="save-button">💾 Save Game</button>
+            <button class="footer-button" id="reset-button">🔄 Reset Progress</button>
+            <div class="version">v1.0.0</div>
+        </div>
+    </footer>
+
+    <!-- Notification Container -->
+    <div class="notification-container" id="notifications"></div>
+
+    <!-- Scripts -->
+    <script src="js/game.js"></script>
+    <script src="js/recipes.js"></script>
+    <script src="js/upgrades.js"></script>
+    <script src="js/customers.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
